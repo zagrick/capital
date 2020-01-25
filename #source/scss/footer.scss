@@ -1,0 +1,137 @@
+$jc: center;
+$ai: center;
+$fw: wrap;
+
+@mixin justify($jc, $ai, $fw) {
+  	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-wrap: $fw;
+}
+
+.footer {
+	background-color: #2c2c2c;
+	&__body {
+		padding: 70px 0 45px 0;
+	}
+	&__rows {
+		@include justify(space-between, $ai, $fw);
+		max-width: 1006px;
+		width: 100%;
+		margin: 0 auto;
+		.column {
+			flex: 0 0 auto;
+		}
+		h4 {
+			color: #ffffff;
+			font-size: 24px;
+			font-weight: 400;
+		}
+	}
+	&__img {}
+	&__contacts {
+		width: 194px;
+	}
+	&__list {
+		margin-top: 30px;
+		li, a {
+			color: #9b9b9b;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+		li {
+			margin: 16px 0;
+			&:before {
+				margin: 4px 10px 0 0;
+			}
+			&:first-child {
+				margin-top: 0;
+				span {
+					&:first-child {
+						font-family: 'SemiBold';
+					}
+					&:last-child {
+						margin-left: 20px;
+					}
+				}
+				&:before {
+					content: url('/img/location.png');
+				}
+			}
+			&:nth-child(2), &:nth-child(3) {
+				&:before {
+					content: url('/img/call.png');
+				}
+			}
+			&:last-child {
+				&:before {
+					content: url('/img/time.png');
+				}
+			}
+		}
+		img {
+			margin-right: 10px;
+		}
+	}
+	&__document {}
+	&__links {
+		width: 237px;
+		margin: 30px 0 15px 0;
+		a {
+			color: #8f8f8f;
+			font-family: 'ProximaNova', sans-serif;
+			font-weight: 400;
+			line-height: 30px;
+			text-decoration: underline;
+		}
+	}
+	&__office {
+		margin-top: 15px;
+		a {
+			width: 182px;
+			height: 41px;
+			border-radius: 5px;
+			background-color: #9dd21e;
+			opacity: 0.8;
+			color: #e2e2e2;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 58px;
+			padding: 14px 56px 15px 50px;
+		}
+	}
+	&__developer {
+		background-color: #3d3d3d;
+		color: #8f8f8f;
+		font-family: 'ProximaNova', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 22px;
+		text-align: center;
+		padding: 11px 0 10px 0;
+	}
+}
+
+@media (max-width: 1200px) {
+	.footer {
+		&__body {
+			padding: 70px 20px 45px 20px;
+		}
+	}
+}
+@media (max-width: 992px) {}
+@media (max-width: 767px) {
+	.footer {
+		&__rows {
+			justify-content: center;
+			.column {
+				margin: 20px;
+				text-align: center;
+			}
+		}
+		&__list {
+			text-align: left;
+		}
+	}
+}

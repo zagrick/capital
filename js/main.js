@@ -1,0 +1,1 @@
+$(".header__burger").on("click",function(e){$(this).is(e.target)?($(".header__burger").find("span").removeClass("active"),$(".mobile").fadeOut("slow")):($(".header__burger").find("span").addClass("active"),$(".mobile").fadeIn("slow"))});
